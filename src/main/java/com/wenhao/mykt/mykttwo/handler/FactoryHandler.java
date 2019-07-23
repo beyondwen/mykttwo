@@ -14,11 +14,11 @@ public class FactoryHandler {
         //第二个handler
         GateWayHandler conversationHandler = new ConversationHandler();
         //设置下级handler
-        currentLimitHandler.setNextHandler(conversationHandler);
+        currentLimitHandler.setHandler(conversationHandler);
         //第三个handler
         GateWayHandler blacklistHandler = new BlacklistHandler();
         //设置下级handler
-        conversationHandler.setNextHandler(blacklistHandler);
+        conversationHandler.setHandler(blacklistHandler);
         return currentLimitHandler;
     }
 }

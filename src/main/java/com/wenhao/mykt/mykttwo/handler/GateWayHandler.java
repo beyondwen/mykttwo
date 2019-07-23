@@ -12,8 +12,7 @@ public abstract class GateWayHandler {
         }
     }
 
-    protected GateWayHandler setNextHandler(GateWayHandler gateWayHandler) {
+    public void setHandler(GateWayHandler gateWayHandler) {
         this.nextGateWayHandler = gateWayHandler;
-        return nextGateWayHandler;
     }
 }

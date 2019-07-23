@@ -1,6 +1,6 @@
 package com.wenhao.mykt.mykttwo.controller;
 
-import com.wenhao.mykt.mykttwo.handler.FactoryHandler;
+import com.wenhao.mykt.mykttwo.service.GatewayHandlerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HandlerController {
 
+//    @Autowired
+//    private FactoryHandler factoryHandler;
+
     @Autowired
-    private FactoryHandler factoryHandler;
+    private GatewayHandlerService gatewayHandlerService;
 
 
     @GetMapping("/")
     public String handler() {
-        factoryHandler.getGateWayHandler().service();
+        gatewayHandlerService.getDBHandler().service();
         return "成功";
     }
 }
